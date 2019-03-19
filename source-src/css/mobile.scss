@@ -67,7 +67,7 @@ html, body, #container {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .85);
+    background: rgba(0, 0, 0, .4);
     z-index: 999;
 }
 .btnctn{
@@ -216,7 +216,7 @@ html, body, #container {
             }
         }
     }
-    
+
     #article-nav-older{
         float: none;
         display: block;

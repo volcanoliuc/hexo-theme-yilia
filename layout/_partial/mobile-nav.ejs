@@ -20,13 +20,21 @@
 				<% count++ %>
 			<% } %>
 			<% var ulWidth = count > 2 ? '70%' : '50%' %>
-			
+
 			<nav class="header-nav">
-				<div class="social">
-					<% for (var i in theme.subnav){ %>
-						<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
-			        <%}%>
-				</div>
+					<div class="social">
+							<% for (var i in theme.subnav){ %>
+								<% if(i != 'yuque') { %>
+									<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
+								<% } else { %>
+									<a style="line-height: 1;" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>">
+										<span style="width: 28px; height: 28px; border-radius: 16px; overflow: hidden; display: inline-block;">
+											<img src="https://cdn.nlark.com/yuque/0/2019/png/84147/1547032500238-d93512f4-db23-442f-b4d8-1d46304f9673.png?x-oss-process=image/resize,m_fill,w_56,h_56/format,png" alt="语雀">
+										</span>
+									</a>
+								<% } %>
+									<%}%>
+						</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
@@ -37,7 +45,7 @@
 		        <%}%>
 				</ul>
 			</nav>
-		</header>				
+		</header>
 	</div>
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
